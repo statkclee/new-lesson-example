@@ -120,18 +120,34 @@ for thing in collection:
 The class specified at the bottom using an opening curly brace and colon,
 the class identifier with a leading dot,
 and a closing curly brace.
-The [template]({{ site.template_repo }}) provides three styles for code blocks:
+The [template]({{ site.template_repo }}) provides four styles for code blocks:
 
 *   `.error`: error messages.
 *   `.output`: program output.
-*   `.source`: program source.
+*   `.python`: Python program source (syntax highlighted).
+*   `.source`: generic program source.
 
-> ## Why No Syntax Highlighting?
->
-> We do not use syntax highlighting for code blocks
-> because some learners' systems won't do it,
-> or will do it differently than what they see on screen.
-{: .callout}
+The difference between `.python` and `.source` is shown by:
+
+<div class="row">
+  <div class="col-md-6" markdown="1">
+~~~
+# Plain source
+def mangle(a, b):
+    for i in range(a):
+      print(b)
+~~~
+{: .source}
+  </div>
+  <div class="col-md-6" markdown="1">
+{% highlight python %}
+# Python source
+def mangle(a, b):
+    for i in range(a):
+      print(b)
+{% endhighlight %}
+  </div>
+</div>
 
 ## Special Blockquotes
 
